@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage[familydefault,light]{Chivo}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{watermark}
+
+\thiswatermark{\centering \put(-37, -1000){\includegraphics[scale=1.2]{bg.png}}}
+
+\newfontfamily{\FA}{FontAwesome}
+\pagenumbering{gobble}
+
+\title{Muzzammil's Resume}
+\author{Muhammad Muzzammil}
+
+\def\phone{{\FA \faPhone}}
+\def\email{{\FA \faEnvelope0}}
+\def\website{{\FA \faGlobe}}
+\def\github{{\FA \faGithub}}
+\def\twitter{{\FA \faTwitter}}
+\def\bday{{\FA \faBirthdayCake}}
+\def\p#1{\textbullet \ #1}
+\def\heading#1{\Large \bfseries #1 \normalsize \normalfont }
+\def\subheading#1{\large #1 \normalsize \dotfill}
+\def\name#1{\Huge #1 \normalsize \\}
+\def\httpslink#1{\href{https://#1}{#1}}
+\def\gitlink#1{ \href{https://github.com/#1}{\github}}
+\def\project#1#2#3{\href{https://#3/?ref=resume}{#1, \itshape#2\normalfont}}
+\def\projectlink#1{\itshape \httpslink{#1}\normalfont}
+\def\lang#1{\hfill #1\normalfont}
+
+\begin{document}
+    \noindent
+    \href{tel:+91 9873404375}{ \phone\ +91 9873404375\ \ }
+    \href{mailto:email@muzzammil.xyz}{ \email \ \ email@muzzammil.xyz} 
+    \hfill
+    \name{Mohammad}
+    \href{https://muzzammil.xyz}{ \website\ muzzammil.xyz\ \ \ \ \ \ \ }
+    \href{https://git.muzzammil.xyz/?ref=resume}{ \github\ \ muhammadmuzzammil1998} 
+    \hfill 
+    \name{Muzammil}
+    \href{https://twitter.com/mmuzzammil1998}{ \twitter\ mmuzzammil1998}
+    { \bday\ \ Sept. 14, 1998}
+    \hfill 
+    \name{Khan}
+    \begin{center}
+        \dotfill
+    \end{center}
+    \noindent
+    \begin{tabular}{l l}
