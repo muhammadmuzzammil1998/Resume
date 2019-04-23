@@ -63,6 +63,7 @@ func main() {
 				fmt.Printf("    %s\\\\\n", section1[i+44])
 			}
 		}
+		fmt.Printf("    \\gitlinkc{muhammadmuzzammil1998/Resume}{\\tiny{Generated on \\today}}\n")
 		fmt.Printf("\\end{document}\n")
 		return
 	}
