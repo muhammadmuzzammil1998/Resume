@@ -49,7 +49,8 @@
 \def\subheading#1{\large #1 \normalsize \dotfill}
 \def\name#1{\Huge #1 \normalsize \\}
 \def\httpslink#1{\href{https://#1}{#1}}
-\def\gitlink#1{ \href{https://github.com/#1}{\github}}
+\def\gitlinkc#1#2{\href{https://github.com/#1}{#2}}
+\def\gitlink#1{ \gitlinkc{#1}{\github}}
 \def\project#1#2#3{\href{https://#3/?ref=resume}{#1, \itshape#2\normalfont}}
 \def\projectlink#1{\itshape \httpslink{#1}\normalfont}
 \def\lang#1{\hfill #1\normalfont}
@@ -117,8 +118,6 @@
          &  \\
         \project{Reader}{2016}{reader.muzzammil.xyz} \lang{C\#} &  \\
         \p{Text to speech and speech to text program.} &  \\
-         &  \\
     \end{tabular}\\
-    \\
-    \tiny{Last updated: \today}\\
+    \gitlinkc{muhammadmuzzammil1998/Resume}{\tiny{Generated on \today}}
 \end{document}
