@@ -28,25 +28,30 @@
 \usepackage[familydefault,light]{Chivo}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{watermark}
-
-\thiswatermark{\centering \put(-37, -1000){\includegraphics[scale=1.2]{bg.png}}}
+\usepackage{xcolor}
 
 \newfontfamily{\FA}{FontAwesome}
 \pagenumbering{gobble}
 
+\definecolor{heading}{RGB}{4, 138, 102}
+\definecolor{subheading}{RGB}{0, 148, 109}
+\definecolor{icon}{RGB}{17, 194, 147}
+\definecolor{title}{RGB}{69, 204, 168}
+\definecolor{text}{RGB}{0, 0, 0}
+
 \title{Muzzammil's Resume}
 \author{Muhammad Muzzammil}
 
-\def\phone{{\FA \faPhone}}
-\def\email{{\FA \faEnvelope0}}
-\def\website{{\FA \faGlobe}}
-\def\github{{\FA \faGithub}}
-\def\twitter{{\FA \faTwitter}}
-\def\bday{{\FA \faBirthdayCake}}
+\def\icon#1{\color{icon}{#1}\color{text}}
+\def\phone{\icon{\FA \faPhone}}
+\def\email{\icon{\FA \faEnvelope0}}
+\def\website{\icon{\FA \faGlobe}}
+\def\github{\icon{\FA \faGithub}}
+\def\twitter{\icon{\FA \faTwitter}}
+\def\bday{\icon{\FA \faBirthdayCake}}
 \def\p#1{\textbullet \ #1}
-\def\heading#1{\Large \bfseries #1 \normalsize \normalfont }
-\def\subheading#1{\large #1 \normalsize \dotfill}
+\def\heading#1{\color{heading}\Large \bfseries #1 \normalsize \normalfont }
+\def\subheading#1{\color{subheading}\large #1 \normalsize \dotfill}
 \def\name#1{\Huge #1 \normalsize \\}
 \def\httpslink#1{\href{https://#1}{#1}}
 \def\gitlinkc#1#2{\href{https://github.com/#1}{#2}}
@@ -76,48 +81,75 @@
     \begin{tabular}{l l}
         \heading{About me} & \heading{Education} \\
          &  \\
-        \p{Experienced in Full stack desktop and web development} & \subheading{School} \\
-        \p{Experienced in Database management with SQL} & National Victor Public School, \\
-        \p{Experienced in Photoshop} & \itshape Class of '17 \\
-        \p{Experienced in Windows Environment} &  \\
-        \p{Familiar with Linux Environment} & \subheading{BCA/BS (IT)} \\
-        \p{Familiar with Adobe Premiere and Audition} & CGPA: 9.1 (I: 8.1, II: 9.4, III: 9.8) \\
-        \p{Fluent in C\#, Go, Java; Familiar with C, C++, Python and} & SEST, Jamia Hamdard, \\
-        \p{Fluent in HTML, CSS, PHP, JavaScript} & \itshape Class of '20 (expected) \\
-        \p{Familiar with ASP.NET, Node.js, CoffeeScript and \LaTeX.} &  \\
+        \p{Experienced in Full stack desktop and web development.} & \subheading{School} \\
+        \p{Experienced in Database management with SQL.} & National Victor Public School, \\
+        \p{Experienced in Photoshop.} & \itshape Class of '17 \\
+        \p{Experienced in Windows Environment.} &  \\
+        \p{Familiar with Linux Environment.} & \subheading{BCA/BSc (IT)} \\
+        \p{Familiar with Adobe Premiere and Audition.} & CGPA: 9.28 (I: 8.1, II: 9.4, \\
+        \p{Fluent in C\#, Go, Java; Familiar with C, C++, Python, and} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  III: 9.8, IV: 9.8) \\
+        \p{Fluent in HTML, CSS, PHP, JavaScript.} & SEST, Jamia Hamdard, \\
+        \p{Familiar with ASP.NET, Node.js, CoffeeScript and \LaTeX.} & \itshape Class of '20 \\
          &  \\
-        \heading{Work Experience} & \heading{Coursework} \\
+        \heading{Experiences} & \heading{Coursework} \\
          &  \\
-        \subheading{Contributions to open-source projects} & \p{Data Structures}, \\
+        \subheading{Internships} & \p{Data Structures}, \\
          & \p{Operating Systems},  \\
-        carbon by Dawn Labs (\projectlink{carbon.now.sh})\gitlink{muhammadmuzzammil1998?org=dawnlabs}\lang{JavaScript} & \p{Programming with C,} \\
-        \p{Designed an algorithm to determine color intensity of} & \ \ \ \ C++ and Java,  \\
-        background and adapt window title color accordingly. & \p{Data Communication} \\
-         & \ \ \ \ and networks,  \\
-        WebAssembly (\projectlink{webassembly.org})\gitlink{muhammadmuzzammil1998?tab=overview\&from=2018-12-01\&to=2018-12-31\&org=WebAssembly}\lang{CSS} & \p{Organisational Behaviour}, \\
-        \p{Improved UX of navigation system on website.} & \p{Database Management} \\
+        At Jamia Hamdard, New Delhi, India & \p{Programming with C,} \\
+        \p{Summer Vacation of 2019.} & \ \ \ \ C++ and Java,  \\
+        \ \ \ \ - Website development for the University's website. & \p{Data Communication} \\
+        \ \ \ \ - Finding vulnerabilities and flaws in existing website. & \ \ \ \ and networks,  \\
+        \p{Under the guidance of Prof. M. Afshar Alam} & \p{Organisational Behaviour}, \\
+        \ \ \ \ Dean, School of Engineering Sciences and Technology. & \p{Database Management} \\
          & \ \ \ \ Systems, \\
-        \subheading{My Projects} & \p{Management Information} \\
+        \subheading{Achievements} & \p{Management Information} \\
          & \ \ \ \ System, \\
-        \project{Page-Hash}{2019}{pagehash.muzzammil.xyz}\gitlink{muhammadmuzzammil1998/Page-Hash} \lang{JavaScript (Node.js)} & \p{Artificial Intelligence.} \\
-        \p{Generates hashes of online resources by URL.} &  \\
+        Appreciation letter for Research Group - May, 2019 & \p{Artificial Intelligence}, \\
+        \p{Led a group of five for research under the mentorship of} & \p{Software Engineering}, \\
+        \ \ \ \ Dr. Shahab Saquib Sohail, Asst. Professor, & \p{Cloud Computing}, \\
+        \ \ \ \ Department of Computer Science \& Engineering, SEST. & \p{Cryptography}. \\
+        \p{Issued by Prof. M. Afshar Alam - Dean, SEST.} &  \\
          &  \\
-        \project{Log-mailer}{2018}{}\gitlink{muhammadmuzzammil1998/Log-mailer} \lang{Go} &  \\
-        \p{Uses SMTP to email log files at specified intervals.} &  \\
+        \subheading{Contributions to open-source projects} &  \\
          &  \\
-        \project{SWSH}{2017}{swsh.muzzammil.xyz}\gitlink{SecureWindowsShell/SWSH} \lang{C\#} &  \\
-        \p{Secure Windows Shell, a SSH client for Windows.} &  \\
-        \p{swsh-keygen\gitlink{SecureWindowsShell/swsh-keygen} generates SSH key pairs for SWSH.} &  \\
+        carbon by Dawn Labs (\projectlink{carbon.now.sh})\gitlink{muhammadmuzzammil1998?org=dawnlabs}\lang{JavaScript} &  \\
+        \p{Designed an algorithm to determine color intensity of} &  \\
+        \ \ \ \ background and adapt window title color accordingly. &  \\
          &  \\
-        \project{BingHomepageAPI}{2017}{git.muzzammil.xyz/bing}\gitlink{BingHomepage/BingHomepageAPI} \lang{PHP, C\#, Go} &  \\
-        \p{An API to get Bing's Homepage image and legal info.} &  \\
-        \p{BingWallpaper\gitlink{BingHomepage?q=BingWallpaper} uses this API to update wallpapers.} &  \\
+        WebAssembly (\projectlink{webassembly.org})\gitlink{muhammadmuzzammil1998?tab=overview\&from=2018-12-01\&to=2018-12-31\&org=WebAssembly}\lang{CSS} &  \\
+        \p{Improved UX of navigation system on website.} &  \\
          &  \\
-        \project{Disguise}{2016}{disguise.muzzammil.xyz} \lang{C\#} &  \\
-        \p{Steganography program to hide files in images.} &  \\
          &  \\
-        \project{Reader}{2016}{reader.muzzammil.xyz} \lang{C\#} &  \\
-        \p{Text to speech and speech to text program.} &  \\
+         &  \\
+         &  \\
+         &  \\
+         &  \\
+    & \hfill \itshape \color{icon} \tiny{continued on next page...}
     \end{tabular}\\
+    \subheading{My Projects}\\
+    \color{text}\\
+    \project{jsonc}{2019}{}\gitlink{muhammadmuzzammil1998/jsonc} \lang{Go}\\
+    \p{A superset of JSON which supports comments.}\\
+    \\
+    \project{Page-Hash}{2019}{pagehash.muzzammil.xyz}\gitlink{muhammadmuzzammil1998/Page-Hash} \lang{JavaScript (Node.js)}\\
+    \p{Generates hashes of online resources by URL.}\\
+    \p{pagehash-go\gitlink{muhammadmuzzammil1998/pagehash-go}, a Go lang package.}\\
+    \\
+    \project{Log-mailer}{2018}{}\gitlink{muhammadmuzzammil1998/Log-mailer} \lang{Go}\\
+    \p{Uses SMTP to email log files at specified intervals.}\\
+    \\
+    \project{SWSH}{2017}{swsh.muzzammil.xyz}\gitlink{SecureWindowsShell/SWSH} \lang{C\#}\\
+    \p{Secure Windows Shell, a SSH client for Windows.}\\
+    \p{swsh-keygen\gitlink{SecureWindowsShell/swsh-keygen} generates SSH key pairs for SWSH.}\\
+    \\
+    \project{BingHomepageAPI}{2017}{git.muzzammil.xyz/bing}\gitlink{BingHomepage/BingHomepageAPI} \lang{PHP, C\#, Go}\\
+    \p{An API to get Bing's Homepage image and legal info.}\\
+    \p{BingWallpaper\gitlink{BingHomepage?q=BingWallpaper} uses this API to update wallpapers.}\\
+    \\
+    \project{Disguise}{2016}{disguise.muzzammil.xyz} \lang{C\#}\\
+    \p{Steganography program to hide files in images.}\\
+    \\
+    \project{Reader}{2016}{reader.muzzammil.xyz} \lang{C\#}\\
+    \p{Text to speech and speech to text program.}\\
     \gitlinkc{muhammadmuzzammil1998/Resume}{\tiny{Generated on \today}}
 \end{document}
