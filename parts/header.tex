@@ -28,25 +28,30 @@
 \usepackage[familydefault,light]{Chivo}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{watermark}
-
-\thiswatermark{\centering \put(-37, -1000){\includegraphics[scale=1.2]{bg.png}}}
+\usepackage{xcolor}
 
 \newfontfamily{\FA}{FontAwesome}
 \pagenumbering{gobble}
 
+\definecolor{heading}{RGB}{4, 138, 102}
+\definecolor{subheading}{RGB}{0, 148, 109}
+\definecolor{icon}{RGB}{17, 194, 147}
+\definecolor{title}{RGB}{69, 204, 168}
+\definecolor{text}{RGB}{0, 0, 0}
+
 \title{Muzzammil's Resume}
 \author{Muhammad Muzzammil}
 
-\def\phone{{\FA \faPhone}}
-\def\email{{\FA \faEnvelope0}}
-\def\website{{\FA \faGlobe}}
-\def\github{{\FA \faGithub}}
-\def\twitter{{\FA \faTwitter}}
-\def\bday{{\FA \faBirthdayCake}}
+\def\icon#1{\color{icon}{#1}\color{text}}
+\def\phone{\icon{\FA \faPhone}}
+\def\email{\icon{\FA \faEnvelope0}}
+\def\website{\icon{\FA \faGlobe}}
+\def\github{\icon{\FA \faGithub}}
+\def\twitter{\icon{\FA \faTwitter}}
+\def\bday{\icon{\FA \faBirthdayCake}}
 \def\p#1{\textbullet \ #1}
-\def\heading#1{\Large \bfseries #1 \normalsize \normalfont }
-\def\subheading#1{\large #1 \normalsize \dotfill}
+\def\heading#1{\color{heading}\Large \bfseries #1 \normalsize \normalfont }
+\def\subheading#1{\color{subheading}\large #1 \normalsize \dotfill}
 \def\name#1{\Huge #1 \normalsize \\}
 \def\httpslink#1{\href{https://#1}{#1}}
 \def\gitlinkc#1#2{\href{https://github.com/#1}{#2}}
