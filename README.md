@@ -28,7 +28,7 @@ On Ubuntu, the CI workflow installs these packages automatically. A local
 installation can use:
 
 ```sh
-sudo apt-get install latexmk texlive-latex-recommended texlive-latex-extra \
+sudo apt-get install latexmk lmodern texlive-latex-recommended texlive-latex-extra \
   texlive-fonts-recommended poppler-utils qpdf
 ```
 
