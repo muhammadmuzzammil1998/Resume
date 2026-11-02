@@ -2,6 +2,8 @@
 set -euo pipefail
 
 pdf=${1:-build/resume.pdf}
+max_pages=${2:-2}
+shift 2 || true
 if [[ ! -s "$pdf" ]]; then
   echo "PDF is missing or empty: $pdf" >&2
   exit 1
@@ -9,21 +11,15 @@ fi
 
 qpdf --check "$pdf"
 pages=$(pdfinfo "$pdf" | awk -F: '$1 == "Pages" {gsub(/[[:space:]]/, "", $2); print $2}')
-if [[ ! "$pages" =~ ^[0-9]+$ ]] || (( pages < 1 || pages > 2 )); then
-  echo "Expected a one- or two-page résumé, found: ${pages:-unknown}" >&2
+if [[ ! "$pages" =~ ^[0-9]+$ ]] || (( pages < 1 || pages > max_pages )); then
+  echo "Expected between one and $max_pages pages, found: ${pages:-unknown}" >&2
   exit 1
 fi
 
 text_file=$(mktemp)
 trap 'rm -f "$text_file"' EXIT
 pdftotext -layout "$pdf" "$text_file"
-for expected in \
-  "Mohammad Muzammil Khan" \
-  "Professional Summary" \
-  "Technical Skills" \
-  "Professional Experience" \
-  "Education" \
-  "mohammadmuzammil.cs@gmail.com"; do
+for expected in "$@"; do
   if ! grep -Fq "$expected" "$text_file"; then
     echo "Expected searchable text was not found: $expected" >&2
     exit 1
@@ -41,8 +37,9 @@ if ! awk 'NR > 2 && $(NF - 4) != "yes" { missing = 1 } END { exit missing }' <<<
   exit 1
 fi
 
-if [[ -f build/resume.log ]] &&
-  grep -E 'Missing character:|Font .* not found' build/resume.log; then
+log_file="${pdf%.pdf}.log"
+if [[ -f "$log_file" ]] &&
+  grep -E 'Missing character:|Font .* not found' "$log_file"; then
   echo "The LaTeX log reports missing characters or fonts" >&2
   exit 1
 fi

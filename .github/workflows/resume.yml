@@ -31,14 +31,16 @@ jobs:
             poppler-utils \
             qpdf
 
-      - name: Build and validate résumé
+      - name: Build and validate résumé and CV
         run: make check
 
-      - name: Upload résumé PDF
+      - name: Upload résumé and CV PDFs
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: resume-pdf
-          path: build/resume.pdf
+          name: resume-documents
+          path: |
+            build/resume.pdf
+            build/cv.pdf
           if-no-files-found: error
           retention-days: 30
 
@@ -50,6 +52,8 @@ jobs:
           path: |
             build/resume.log
             build/resume.fdb_latexmk
+            build/cv.log
+            build/cv.fdb_latexmk
           if-no-files-found: ignore
           retention-days: 7
 
@@ -71,10 +75,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7.0.1
 
-      - name: Download built résumé PDF
+      - name: Download built PDFs
         uses: actions/download-artifact@v8.0.2
         with:
-          name: resume-pdf
+          name: resume-documents
           path: site
 
       - name: Configure GitHub Pages

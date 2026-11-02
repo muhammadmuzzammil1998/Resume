@@ -1,20 +1,21 @@
 # Mohammad Muzammil Khan — Résumé
 
-This repository contains the canonical, ATS-friendly LaTeX source for my
-professional résumé, a static download page, and the GitHub Actions workflow
-that builds and publishes the PDF.
+This repository contains an ATS-friendly résumé and a comprehensive CV, both
+maintained as LaTeX, plus a static download page and the GitHub Actions
+workflow that builds and publishes both PDFs.
 
 ## Project structure
 
 ```text
 .
-├── .github/workflows/resume.yml  # Build, validate, and publish
-├── sections/                     # Résumé content by section
-├── site/index.html                # GitHub Pages landing page
-├── styles/resume.sty              # Shared typography and layout
-├── scripts/check-pdf.sh           # PDF integrity and text checks
-├── Makefile                       # Repeatable build/check/clean commands
-└── resume.tex                     # Canonical document entry point
+├── .github/workflows/resume.yml  # Build, validate, and publish both PDFs
+├── sections/                     # Shared résumé and detailed CV content
+├── site/index.html               # GitHub Pages landing page
+├── styles/resume.sty             # Shared typography and layout
+├── scripts/check-pdf.sh          # PDF integrity and text checks
+├── Makefile                      # Repeatable build/check/clean commands
+├── resume.tex                    # Concise résumé entry point
+└── cv.tex                        # Comprehensive CV entry point
 ```
 
 ## Prerequisites
@@ -40,15 +41,17 @@ make check
 make clean
 ```
 
-The generated PDF is `build/resume.pdf`. `make check` verifies that the PDF
-opens, has one or two pages, contains searchable text, and embeds its fonts.
-It also checks for expected résumé text. The same `make check` command runs in
-GitHub Actions.
+The generated files are `build/resume.pdf` and `build/cv.pdf`. The résumé is
+limited to two pages; the detailed CV may use up to six. `make check` verifies
+that both PDFs open, contain searchable expected text, and embed their fonts.
+The same `make check` command runs in GitHub Actions.
 
 ## Editing the résumé
 
-Edit the relevant file in `sections/`; update the document metadata or contact
-links in `resume.tex`. Keep factual claims supported by the source documents
+Edit the relevant file in `sections/` or `sections/cv/`; update the document
+metadata or contact links in `resume.tex` and `cv.tex`. The résumé is the
+focused application document. The CV also records earlier academic projects
+and research publications. Keep factual claims supported by source documents
 and do not add confidential employer or client details. Use plain text labels
 and conventional headings so PDF text remains straightforward to extract.
 
@@ -60,16 +63,17 @@ successful build is uploaded as a workflow artifact. Only pushes to `main`
 deploy the landing page and PDF through the supported GitHub Pages Actions
 deployment mechanism; pull requests do not publish.
 
-The repository's expected project-site URLs are:
+The public project-site URLs are:
 
 - Website: <https://muhammadmuzzammil1998.github.io/Resume/>
-- PDF: <https://muhammadmuzzammil1998.github.io/Resume/resume.pdf>
+- Résumé PDF: <https://muhammadmuzzammil1998.github.io/Resume/resume.pdf>
+- Detailed CV: <https://muhammadmuzzammil1998.github.io/Resume/cv.pdf>
 
-The page uses a relative `resume.pdf` link, so it works under the repository's
-GitHub Pages base path. In the repository settings, set **Pages → Build and
+The page uses relative PDF links, so they work under the repository's GitHub
+Pages base path. In the repository settings, set **Pages → Build and
 deployment → Source** to **GitHub Actions** if it is not already configured.
-The URLs above are expected destinations, not confirmation that deployment has
-completed; verify the workflow and public links after publishing.
+The workflow publishes both PDFs alongside the landing page after a successful
+push to `main`.
 
 ## Troubleshooting
 
@@ -78,7 +82,7 @@ completed; verify the workflow and public links after publishing.
 - **Compilation failure:** inspect `build/resume.log` and the workflow's
   failure diagnostic. The build intentionally stops on the first LaTeX error.
 - **Text/font validation failure:** inspect `pdftotext -layout
-  build/resume.pdf -` and `pdffonts build/resume.pdf`; the PDF must contain
+  build/resume.pdf -` or `build/cv.pdf` and `pdffonts`; the PDFs must contain
   extractable text and embedded fonts.
 - **Pages deployment failure:** confirm that Pages uses the GitHub Actions
   source and that Actions are permitted for the repository. Review the
