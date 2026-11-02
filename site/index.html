@@ -3,143 +3,408 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Résumé and curriculum vitae of Mohammad Muzammil Khan, Senior UI Engineer focused on frontend architecture and platform engineering.">
-    <title>Mohammad Muzammil Khan | Senior UI Engineer</title>
+    <meta name="theme-color" content="#08111f">
+    <meta name="description" content="Resume and CV of Mohammad Muzammil Khan, Senior Software Engineer building thoughtful frontend experiences and dependable software platforms.">
+    <title>Mohammad Muzammil Khan | Senior Software Engineer</title>
     <style>
       :root {
-        color-scheme: light;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        color: #172b3a;
-        background: #f3f6f8;
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #f4f7fb;
+        background: #08111f;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        --muted: #a0aec0;
+        --line: rgb(255 255 255 / 11%);
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
+        min-width: 320px;
         min-height: 100vh;
         margin: 0;
-        display: grid;
-        place-items: center;
+        background:
+          radial-gradient(ellipse at 12% 9%, rgb(33 101 151 / 24%), transparent 34rem),
+          radial-gradient(ellipse at 91% 82%, rgb(14 130 118 / 18%), transparent 36rem),
+          #08111f;
       }
 
-      main {
-        width: min(42rem, calc(100% - 3rem));
-        padding: clamp(2rem, 7vw, 4.5rem);
-        background: #fff;
-        border: 1px solid #dce4ea;
-        border-radius: 1rem;
-        box-shadow: 0 1.5rem 4rem rgb(23 43 58 / 8%);
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: #edf5ff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid rgb(126 211 228 / 40%);
+        border-radius: 13px;
+        background: linear-gradient(145deg, rgb(41 119 167 / 38%), rgb(16 42 60 / 75%));
+        color: #b6f0f3;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+      }
+
+      .top-link,
+      .contact-link {
+        color: #c3cfde;
+        font-size: 0.88rem;
+        text-decoration-color: rgb(195 207 222 / 45%);
+        text-underline-offset: 4px;
+      }
+
+      .hero {
+        max-width: 800px;
+        padding: clamp(72px, 11vw, 128px) 0 64px;
       }
 
       .eyebrow {
-        margin: 0 0 0.75rem;
-        color: #42627b;
-        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        color: #a9dce6;
+        font-size: 0.76rem;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
       }
 
+      .eyebrow::before {
+        width: 24px;
+        height: 1px;
+        background: #6ed6d0;
+        content: "";
+      }
+
       h1 {
+        max-width: 780px;
         margin: 0;
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        letter-spacing: -0.04em;
-        line-height: 1.08;
+        font-size: clamp(3rem, 8vw, 6.4rem);
+        font-weight: 650;
+        letter-spacing: -0.075em;
+        line-height: 0.99;
       }
 
       .role {
-        margin: 0.8rem 0 1.25rem;
-        color: #244e6b;
-        font-size: 1.2rem;
-        font-weight: 600;
+        margin: 23px 0 0;
+        color: #d3deeb;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
       }
 
       .intro {
-        max-width: 38rem;
-        color: #425563;
-        font-size: 1.05rem;
-        line-height: 1.7;
+        max-width: 660px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.8;
+      }
+
+      .documents {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding-bottom: 80px;
+      }
+
+      .document {
+        position: relative;
+        display: flex;
+        min-height: 300px;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: hidden;
+        padding: clamp(25px, 4vw, 38px);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: linear-gradient(145deg, rgb(255 255 255 / 7%), rgb(255 255 255 / 2%));
+        box-shadow: 0 24px 80px rgb(0 0 0 / 15%);
+        isolation: isolate;
+      }
+
+      .document::before {
+        position: absolute;
+        z-index: -1;
+        top: -110px;
+        right: -100px;
+        width: 280px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--glow);
+        content: "";
+        filter: blur(1px);
+        opacity: 0.75;
+      }
+
+      .document.resume {
+        --glow: radial-gradient(circle, rgb(30 132 190 / 27%), transparent 68%);
+      }
+
+      .document.cv {
+        --glow: radial-gradient(circle, rgb(23 161 141 / 23%), transparent 68%);
+      }
+
+      .doc-type {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .resume {
+        --accent: #87d7f0;
+      }
+
+      .cv {
+        --accent: #8be0c6;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(1.9rem, 4vw, 2.45rem);
+        font-weight: 600;
+        letter-spacing: -0.055em;
+      }
+
+      .doc-description {
+        max-width: 410px;
+        margin: 11px 0 28px;
+        color: #a8b5c5;
+        font-size: 0.95rem;
+        line-height: 1.65;
       }
 
       .actions {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin: 2rem 0 1.5rem;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
       }
 
-      .button {
+      .pill {
         display: inline-flex;
-        min-height: 2.8rem;
+        min-height: 50px;
         align-items: center;
         justify-content: center;
-        padding: 0 1.15rem;
-        border: 2px solid #17324d;
-        border-radius: 0.45rem;
-        color: #17324d;
+        gap: 10px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 0.91rem;
         font-weight: 700;
         text-decoration: none;
+        transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
       }
 
-      .button.primary {
-        background: #17324d;
-        color: #fff;
+      .pill:hover {
+        transform: translateY(-2px);
       }
 
-      a:focus-visible {
-        outline: 3px solid #d27d2d;
-        outline-offset: 3px;
+      .pill:focus-visible,
+      .top-link:focus-visible,
+      .contact-link:focus-visible,
+      .brand:focus-visible {
+        outline: 3px solid #8ce5dc;
+        outline-offset: 4px;
       }
 
-      .links {
+      .pill.primary {
+        min-width: 158px;
+        padding: 0 22px;
+        background: #eaf8ff;
+        color: #0c2030;
+      }
+
+      .cv .pill.primary {
+        background: #dff9ef;
+        color: #102b27;
+      }
+
+      .pill.primary:hover {
+        background: #fff;
+      }
+
+      .pill.secondary {
+        min-height: 42px;
+        padding: 0 16px;
+        border-color: rgb(255 255 255 / 17%);
+        color: #d2dbe6;
+        font-size: 0.81rem;
+      }
+
+      .pill.secondary:hover {
+        border-color: rgb(255 255 255 / 35%);
+        background: rgb(255 255 255 / 6%);
+      }
+
+      .arrow {
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 0 34px;
+        border-top: 1px solid var(--line);
+        color: #8290a1;
+        font-size: 0.82rem;
+      }
+
+      .contact {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem 1.25rem;
-        margin: 0;
-        padding: 1.25rem 0 0;
-        border-top: 1px solid #e3e9ee;
-        list-style: none;
+        gap: 10px 22px;
       }
 
-      .links a {
-        color: #244e6b;
-        text-underline-offset: 0.2em;
-      }
-
-      @media (max-width: 36rem) {
-        main {
-          width: auto;
-          margin: 1rem;
-          padding: 2rem 1.5rem;
+      @media (max-width: 700px) {
+        .shell {
+          width: min(100% - 32px, 540px);
         }
 
-        .actions {
-          align-items: stretch;
+        .topbar {
+          padding: 20px 0;
+        }
+
+        .top-link {
+          font-size: 0.8rem;
+        }
+
+        .hero {
+          padding: 74px 0 42px;
+        }
+
+        .documents {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding-bottom: 52px;
+        }
+
+        .document {
+          min-height: 275px;
+          border-radius: 22px;
+        }
+
+        .footer {
+          align-items: flex-start;
           flex-direction: column;
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 390px) {
+        .actions {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
   </head>
   <body>
-    <main>
-      <p class="eyebrow">Senior UI Engineer</p>
-      <h1>Mohammad Muzammil Khan</h1>
-      <p class="role">Frontend Architecture and Platform Engineering</p>
-      <p class="intro">
-        I lead UI engineering for complex web applications, building reusable
-        React and TypeScript architecture and reliable integrations across
-        frontend, backend, and observability systems. My experience spans
-        enterprise platforms, monitoring applications, and university research
-        software.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="resume.pdf" download>Download Resume (PDF)</a>
-        <a class="button" href="cv.pdf" download>Download Detailed CV (PDF)</a>
-      </div>
-      <ul class="links" aria-label="Professional links">
-        <li><a href="mailto:mohammadmuzammil.cs@gmail.com">Email</a></li>
-        <li><a href="https://github.com/muhammadmuzzammil1998">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/mmuzzammil1998">LinkedIn</a></li>
-        <li><a href="https://muzzammil.xyz">Website</a></li>
-      </ul>
-    </main>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Mohammad Muzammil Khan home">
+          <span class="brand-mark" aria-hidden="true">MMK</span>
+          <span>Mohammad Muzammil Khan</span>
+        </a>
+        <a class="top-link" href="mailto:muhammadmuzzammil.cs@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <p class="eyebrow">Senior Software Engineer</p>
+          <h1 id="page-title">Mohammad Muzammil Khan</h1>
+          <p class="role">Thoughtful software. Built to scale.</p>
+          <p class="intro">
+            I build intuitive web applications and dependable platforms, bringing
+            together frontend architecture, backend integrations, and observability.
+            Explore my experience in a concise resume or a fuller CV.
+          </p>
+        </section>
+
+        <section class="documents" aria-label="Professional documents">
+          <article class="document resume">
+            <p class="doc-type">A focused introduction</p>
+            <h2>Resume</h2>
+            <p class="doc-description">A clear snapshot of my experience, strengths, and impact across software engineering.</p>
+            <div class="actions">
+              <a class="pill primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+                View resume <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="pill secondary" href="resume.pdf" download="Mohammad-Muzammil-Khan-Resume.pdf">
+                Download PDF <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="document cv">
+            <p class="doc-type">The complete picture</p>
+            <h2>CV</h2>
+            <p class="doc-description">A broader record of my professional journey, education, projects, and research.</p>
+            <div class="actions">
+              <a class="pill primary" href="cv.pdf" target="_blank" rel="noopener noreferrer">
+                View CV <span class="arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="pill secondary" href="cv.pdf" download="Mohammad-Muzammil-Khan-CV.pdf">
+                Download PDF <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Building useful things for the web.</span>
+        <nav class="contact" aria-label="Professional links">
+          <a class="contact-link" href="mailto:muhammadmuzzammil.cs@gmail.com">Email</a>
+          <a class="contact-link" href="https://github.com/muhammadmuzzammil1998">GitHub</a>
+          <a class="contact-link" href="https://linkedin.com/in/mmuzzammil1998">LinkedIn</a>
+          <a class="contact-link" href="https://muzzammil.xyz">Website</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>

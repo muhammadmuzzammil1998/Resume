@@ -21,11 +21,11 @@ $(CV_PDF): cv.tex styles/resume.sty $(wildcard sections/cv/*.tex)
 check: build
 	bash scripts/check-pdf.sh $(RESUME_PDF) 2 \
 	  "Mohammad Muzammil Khan" \
-	  "Senior UI Engineer" \
+	  "Senior Software Engineer" \
 	  "Professional Summary" \
 	  "Technical Skills" \
 	  "Professional Experience" \
-	  "mohammadmuzammil.cs@gmail.com"
+	  "muhammadmuzzammil.cs@gmail.com"
 	bash scripts/check-pdf.sh $(CV_PDF) 6 \
 	  "Mohammad Muzammil Khan" \
 	  "Curriculum Vitae" \

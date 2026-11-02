@@ -1,4 +1,4 @@
-# Mohammad Muzammil Khan — Résumé
+# Mohammad Muzammil Khan — Résumé and CV
 
 This repository contains an ATS-friendly résumé and a comprehensive CV, both
 maintained as LaTeX, plus a static download page and the GitHub Actions
@@ -63,11 +63,11 @@ successful build is uploaded as a workflow artifact. Only pushes to `main`
 deploy the landing page and PDF through the supported GitHub Pages Actions
 deployment mechanism; pull requests do not publish.
 
-The public project-site URLs are:
+The public page includes view and download actions for each PDF:
 
 - Website: <https://muhammadmuzzammil1998.github.io/Resume/>
 - Résumé PDF: <https://muhammadmuzzammil1998.github.io/Resume/resume.pdf>
-- Detailed CV: <https://muhammadmuzzammil1998.github.io/Resume/cv.pdf>
+- CV: <https://muhammadmuzzammil1998.github.io/Resume/cv.pdf>
 
 The page uses relative PDF links, so they work under the repository's GitHub
 Pages base path. In the repository settings, set **Pages → Build and
