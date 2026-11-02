@@ -35,7 +35,7 @@ if ! awk 'NR > 2 { count++ } END { exit (count > 0 ? 0 : 1) }' <<<"$font_report"
   echo "The PDF does not contain any recognized fonts" >&2
   exit 1
 fi
-if ! awk 'NR > 2 && $4 != "yes" { missing = 1 } END { exit missing }' <<<"$font_report"; then
+if ! awk 'NR > 2 && $(NF - 4) != "yes" { missing = 1 } END { exit missing }' <<<"$font_report"; then
   echo "The PDF contains a font that is not embedded:" >&2
   printf '%s\n' "$font_report" >&2
   exit 1
