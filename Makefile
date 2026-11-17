@@ -28,7 +28,6 @@ check: build
 	  "muhammadmuzzammil.cs@gmail.com"
 	bash scripts/check-pdf.sh $(CV_PDF) 6 \
 	  "Mohammad Muzammil Khan" \
-	  "Curriculum Vitae" \
 	  "Technical Expertise" \
 	  "Professional Experience" \
 	  "Research and Publications" \
