@@ -21,7 +21,7 @@ $(CV_PDF): cv.tex styles/resume.sty $(wildcard sections/cv/*.tex)
 check: build
 	bash scripts/check-pdf.sh $(RESUME_PDF) 2 \
 	  "Mohammad Muzammil Khan" \
-	  "Senior Software Engineer" \
+	  "Software Engineer" \
 	  "Professional Summary" \
 	  "Technical Skills" \
 	  "Professional Experience" \
